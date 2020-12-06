@@ -1,0 +1,27 @@
+/* Color Theme Swatches in Hex */
+$dark-primary-hex: #e2618a;
+$dark-secondary-hex: #2e7b8c;
+$dark-background-hex: #242d40;
+$dark-secondary-text-hex: #ffffff;
+$dark-text-hex: #f2f2f2;
+
+/* Color Theme Swatches in RGBA */
+$dark-primary-rgba: rgba(166, 55, 95, 1);
+$dark-secondary-rgba: rgba(226, 97, 138, 1);
+$dark-background-rgba: rgba(36, 45, 64, 1);
+$dark-secondary-text-rgba: rgba(46, 123, 140, 1);
+$dark-text-rgba: rgba(242, 242, 242, 1);
+
+/* Color Theme Swatches in HSLA */
+$dark-primary-hsla: hsla(338, 50, 43, 1);
+$dark-secondary-hsla: hsla(340, 68, 63, 1);
+$dark-background-hsla: hsla(220, 28, 19, 1);
+$dark-secondary-text-hsla: hsla(190, 50, 36, 1);
+$dark-text-hsla: hsla(0, 0, 94, 1);
+
+$dark-border: 1px
+  rgba(
+    $color: #fff,
+    $alpha: 0.5
+  )
+  solid;

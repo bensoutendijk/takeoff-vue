@@ -1,5 +1,4 @@
 <template>
-  <h1>Hello World</h1>
   <div v-for="take in takes" :key="take.id">
     <Take :take="take" />
   </div>

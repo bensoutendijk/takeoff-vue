@@ -1,7 +1,15 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <TakeFeed msg="Welcome to Your Vue.js + TypeScript App" />
+  <div class="container-fluid home">
+    <div class="row">
+      <div class="col-12 home-header">
+        <h3 class="home-header-text">Home</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <TakeFeed />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -16,3 +24,15 @@ export default defineComponent({
   }
 });
 </script>
+
+<style lang="scss">
+@import "@/assets/scss/_variables.scss";
+
+.home-header {
+  border-bottom: $dark-border;
+
+  .home-header-text {
+    font-weight: 700;
+  }
+}
+</style>

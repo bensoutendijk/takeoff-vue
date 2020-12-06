@@ -1,30 +1,65 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div class="container">
+    <div class="row app-grid">
+      <div class="col-2">
+        <nav class="nav side-nav">
+          <li class="nav-item">
+            <router-link class="nav-link" to="/">Home</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/about">About</router-link>
+          </li>
+        </nav>
+      </div>
+      <div class="col-6">
+        <router-view />
+      </div>
+      <div class="col-4"></div>
+    </div>
   </div>
-  <router-view />
 </template>
 
 <style lang="scss">
+@import "@/assets/scss/_variables.scss";
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: $dark-background-rgba;
+  color: $dark-text-rgba;
 }
 
-#nav {
-  padding: 30px;
+.app-grid > div {
+  padding-top: 20px;
+  padding-left: 0px;
+  padding-right: 0px;
+  border-right: $dark-border;
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+  &:nth-last-child(2) {
+    border: none;
+  }
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+  &:last-child {
+    border-right: none;
+    border-left: $dark-border;
+  }
+}
+
+a {
+  color: $dark-primary-rgba;
+}
+
+.side-nav {
+  display: flex;
+  flex-direction: column;
+
+  .nav-link {
+    color: $dark-text-hex;
   }
 }
 </style>

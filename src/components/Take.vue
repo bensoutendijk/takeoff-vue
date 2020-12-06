@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h2>{{ user.name }}</h2>
+  <div class="take">
+    <h5 class="take-header take-username">{{ user.name }}</h5>
     <p>{{ take.message }}</p>
   </div>
 </template>
@@ -28,3 +28,13 @@ export default defineComponent({
   }
 });
 </script>
+
+<style lang="scss">
+.take {
+  padding: 0.25em;
+}
+
+.take-username {
+  font-weight: 700;
+}
+</style>
