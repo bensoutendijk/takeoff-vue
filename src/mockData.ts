@@ -10,7 +10,11 @@ export default {
     takes: [
         {
             id: '1',
-            userId: '1',
+            user: {
+                id: '1',
+                username: 'Ben',
+                handle: 'ben'
+            },
             message: 'Hello World',
             createdOn: Date.now(),
         }

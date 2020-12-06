@@ -1,25 +1,26 @@
 <template>
-  <div v-for="take in takes" :key="take.id">
-    <Take :take="take" />
+  <div v-if="takes.fetched">
+    <div v-for="id in takes.allIds" :key="id">
+      <Take :take="takes.byId[id]" />
+    </div>
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import { defineComponent } from "vue";
 import Take from "@/components/Take.vue";
-import data from "@/mockData";
-
-const { takes } = data;
+import { mapActions, mapState } from "vuex";
 
 export default defineComponent({
   name: "TakeFeed",
   components: {
     Take
   },
-  data() {
-    return {
-      takes
-    };
+  computed: mapState({
+    takes: state => state.takes
+  }),
+  created() {
+    this.$store.dispatch("fetchTakes");
   }
 });
 </script>

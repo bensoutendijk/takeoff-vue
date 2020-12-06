@@ -4,10 +4,17 @@
       <div class="col-2">
         <nav class="nav side-nav">
           <li class="nav-item">
-            <router-link class="nav-link" to="/">Home</router-link>
+            <router-link class="nav-link" to="/">
+              <h4><i class="fal fa-dove"></i></h4>
+            </router-link>
           </li>
-          <li class="nav-item">
-            <router-link class="nav-link" to="/about">About</router-link>
+          <li v-for="item in navItems" :key="item.path" class="nav-item">
+            <router-link class="nav-link" :to="item.path">
+              <h4>
+                <i :class="`fal fa-${item.icon}`"></i>
+                &emsp;{{ item.title }}
+              </h4>
+            </router-link>
           </li>
         </nav>
       </div>
@@ -29,6 +36,14 @@ export default {
   name: "app",
   components: {
     SearchBar
+  },
+  data() {
+    return {
+      navItems: [
+        { title: "Home", icon: "home", path: "/" },
+        { title: "About", icon: "ellipsis-h-alt", path: "/about" }
+      ]
+    };
   }
 };
 </script>
@@ -49,6 +64,7 @@ export default {
 }
 
 .app-grid > div {
+  height: 100vh;
   padding-top: 20px;
   padding-left: 0px;
   padding-right: 0px;
