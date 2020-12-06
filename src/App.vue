@@ -14,10 +14,24 @@
       <div class="col-6">
         <router-view />
       </div>
-      <div class="col-4"></div>
+      <div class="col-4">
+        <SearchBar />
+      </div>
     </div>
   </div>
 </template>
+
+<script lang="ts">
+import Vue from "vue";
+import SearchBar from "@/components/SearchBar.vue";
+
+export default {
+  name: "app",
+  components: {
+    SearchBar
+  }
+};
+</script>
 
 <style lang="scss">
 @import "@/assets/scss/_variables.scss";
