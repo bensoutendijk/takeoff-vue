@@ -1,7 +1,11 @@
 <template>
   <div class="take">
-    <h5 class="take-header take-username">{{ take.user.username }}</h5>
+    <strong class="take-header take-username">{{ take.user.name }}</strong>
+    &ensp;<span>@{{ take.user.handle }}</span>
     <p>{{ take.message }}</p>
+    <p class="take-media-item" v-for="media in take.media" :key="media.id">
+      <img :src="media.url" class="take-media-image" />
+    </p>
   </div>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-  <div v-if="takes.fetched">
+  <div class="takefeed" v-if="takes.fetched">
     <div v-for="id in takes.allIds" :key="id">
       <Take :take="takes.byId[id]" />
     </div>
@@ -24,3 +24,12 @@ export default defineComponent({
   }
 });
 </script>
+
+<style lang="scss">
+@import "@/assets/scss/_variables.scss";
+
+.takefeed {
+  height: calc(100vh - 62px);
+  overflow: auto;
+}
+</style>

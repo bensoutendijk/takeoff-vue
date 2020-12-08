@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container app-container">
     <div class="row app-grid">
       <div class="col-2">
         <nav class="nav side-nav">
@@ -51,20 +51,48 @@ export default {
 <style lang="scss">
 @import "@/assets/scss/_variables.scss";
 
+body {
+  overflow: auto;
+
+  /* total width */
+  ::-webkit-scrollbar {
+    background-color: $dark-background-hex;
+    width: 16px;
+  }
+
+  /* background of the scrollbar except button or resizer */
+  ::-webkit-scrollbar-track {
+    background-color: $dark-background-hex;
+  }
+
+  /* scrollbar itself */
+  ::-webkit-scrollbar-thumb {
+    background-color: #babac0;
+    border-radius: 16px;
+    border: 4px solid $dark-background-hex;
+  }
+
+  /* set button(top and bottom of the scrollbar) */
+  ::-webkit-scrollbar-button {
+    display: none;
+  }
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow: hidden;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   background-color: $dark-background-rgba;
   color: $dark-text-rgba;
 }
 
+.app-container {
+  max-width: 1440px;
+}
+
 .app-grid > div {
-  height: 100vh;
   padding-top: 20px;
   padding-left: 0px;
   padding-right: 0px;
