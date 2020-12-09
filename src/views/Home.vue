@@ -1,9 +1,12 @@
 <template>
   <div class="container-fluid home">
     <div class="row">
-      <div class="col-12 home-header">
-        <h3 class="home-header-text">Home</h3>
+      <div class="col-12 center-header">
+        <h3 class="center-header-text">Home</h3>
       </div>
+    </div>
+    <div class="row">
+      <div class="col-12"></div>
     </div>
     <div class="row">
       <div class="col-12">
@@ -28,10 +31,10 @@ export default defineComponent({
 <style lang="scss">
 @import "@/assets/scss/_variables.scss";
 
-.home-header {
+.center-header {
   border-bottom: $dark-border;
 
-  .home-header-text {
+  .center-header-text {
     font-weight: 700;
   }
 }
