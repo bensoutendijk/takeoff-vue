@@ -31,5 +31,7 @@ export default defineComponent({
 .takefeed {
   height: calc(100vh - 62px);
   overflow: auto;
+  margin-left: -15px;
+  margin-right: -15px;
 }
 </style>

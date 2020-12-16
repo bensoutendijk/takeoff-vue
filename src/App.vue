@@ -5,15 +5,13 @@
         <nav class="nav side-nav">
           <li class="nav-item">
             <router-link class="nav-link" to="/">
-              <h4><i class="fal fa-dove"></i></h4>
+              <i class="nav-icon fal fa-rocket-launch"></i>
             </router-link>
           </li>
           <li v-for="item in navItems" :key="item.path" class="nav-item">
             <router-link class="nav-link" :to="item.path">
-              <h4>
-                <i :class="`fal fa-${item.icon}`"></i>
-                &emsp;{{ item.title }}
-              </h4>
+              <i :class="`nav-icon fal fa-${item.icon}`"></i>
+              <span class="nav-link-text">{{ item.title }}</span>
             </router-link>
           </li>
         </nav>
@@ -118,6 +116,16 @@ a {
 
   .nav-link {
     color: $dark-text-hex;
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+
+  .nav-icon {
+    min-width: 36px;
+  }
+
+  .nav-link-text {
+    margin-left: 15px;
   }
 }
 </style>
