@@ -30,6 +30,7 @@ export default defineComponent({
 <style lang="scss">
 .take {
   padding: 0.25em;
+  border-top: solid rgba($color: #fff, $alpha: 0.5) 1px;
 }
 
 .take-row {

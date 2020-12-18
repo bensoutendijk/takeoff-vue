@@ -1,8 +1,6 @@
 <template>
   <div class="takefeed" v-if="takes.fetched">
-    <div v-for="id in takes.allIds" :key="id">
-      <Take :take="takes.byId[id]" />
-    </div>
+    <Take v-for="id in takes.allIds" :key="id" :take="takes.byId[id]" />
   </div>
 </template>
 
@@ -30,7 +28,7 @@ export default defineComponent({
 
 .takefeed {
   height: calc(100vh - 62px);
-  overflow: auto;
+  overflow: overlay;
   margin-left: -15px;
   margin-right: -15px;
 }
