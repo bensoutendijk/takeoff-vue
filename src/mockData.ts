@@ -30,7 +30,7 @@ function generateTakes(count = 12, users: any[]) {
                 profileImage: user.profileImage,
             },
             message: faker.lorem.words(Math.round(Math.random() * 20) + 4),
-            media: Math.round(Math.random() * 100) < 20 ? generateMedia() : [],
+            media: Math.round(Math.random() * 100) < 20 ? generateMedia(Math.random() > 0.5 ? 1 : 2) : [],
             createdOn: faker.date.recent().getTime()
         })
     }
@@ -54,9 +54,9 @@ function generateUsers(count = 10) {
     return users;
 }
 
-const users = generateUsers(3);
+const users = generateUsers(8);
 
-const takes = generateTakes(12, users);
+const takes = generateTakes(24, users);
 
 export default {
     users,
